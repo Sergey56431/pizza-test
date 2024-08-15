@@ -1,0 +1,51 @@
+@import "../../../../assets/styles/variables";
+
+.product-item {
+  background-color: $white-color;
+  box-shadow: 0 3px 14px 2px rgba(152, 152, 152, 0.2);
+  padding: 15px 20px;
+  width: 282px;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+
+  .product-item-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    margin-bottom: 15px;
+
+    .fullscreen {
+      width: 60%;
+    }
+  }
+
+  .product-item-title {
+    font-size: 18px;
+    color: $button-text-color;
+    font-family: "Muller Bold", sans-serif;
+    margin-bottom: 13px;
+  }
+
+  .product-item-description {
+    font-size: 14px;
+    color: $button-text-color;
+    line-height: 1.286;
+    height: 49px;
+    max-width: 243px;
+    margin-bottom: 15px;
+  }
+
+  .btn-add-to-cart {
+    width: 242px;
+    height: 50px;
+    padding: 17px;
+  }
+}
+
+@media screen and (max-width: 1229px) {
+  .product-item {
+    margin: 12px;
+  }
+}

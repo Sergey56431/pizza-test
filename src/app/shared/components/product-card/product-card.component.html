@@ -1,0 +1,10 @@
+<div class="product-item" >
+  <div class="product-item-image" (click)="openFullscreen(imageElement)" #imageElement>
+    <img [src]="'./assets/images/' + product.image" alt="Пицца">
+  </div>
+  <h2 class="product-item-title">{{product.title}}</h2>
+  <div class="product-item-description">{{product.description}}</div>
+  <div class="product-action" #elem>
+    <a class="button btn-add-to-cart" (click)="addProductToOrder()">В корзину</a>
+  </div>
+</div>
