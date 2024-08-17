@@ -13,14 +13,15 @@ import {PopupComponent} from "./shared/components/popup/popup.component";
   standalone: true,
   imports: [RouterOutlet, RouterLink, ProductCardComponent, ReactiveFormsModule, NgStyle, RemoveDotsDirective, PopupComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss', 'app.component-adaptive.scss']
 })
 export class AppComponent implements OnInit {
   public title = 'pizza-test';
 
   protected _products: ProductType[] = [];
 
-  public show = signal(false)
+  protected _menu = signal(false);
+  public show = signal(false);
   constructor(private _fb: FormBuilder,
               private _productService: ProductService) {
   }
@@ -29,12 +30,16 @@ export class AppComponent implements OnInit {
     this._products = this._productService.getProducts();
   }
 
+  protected _showMenu() {
+    this._menu.set(!this._menu())
+  }
+
   protected _scrollTo(target: HTMLElement): void {
     target.scrollIntoView({block: "center", behavior: "smooth"});
   }
 
-  protected _addToOrder(target: HTMLElement): void {
-    this._scrollTo(target);
+  protected _addToOrder(target: HTMLElement) {
+    target.scrollIntoView({block: "center", behavior: "smooth"});
   }
 
   get name() {
